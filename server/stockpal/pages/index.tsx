@@ -5,6 +5,9 @@ import styles from '@/styles/Home.module.css'
 import {useEffect,useState} from 'react'
 import Link from 'next/link'
 import { Router, useRouter } from 'next/router'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+
 
 
 export default function Home({currUser, setcurrUser, loggedIn}) {
@@ -19,7 +22,7 @@ export default function Home({currUser, setcurrUser, loggedIn}) {
   const [email, setEmail] = useState(""); 
 
 console.log(currUser,loggedIn)
-  if(currUser){
+  if(currUser && "username" in currUser){
     console.log("Pushing")
     router.push('/home')
     }
@@ -47,12 +50,6 @@ console.log(currUser,loggedIn)
     )
     .then(() => {
       console.log(currUser)
-      if(currUser){
-      console.log("Pushing")
-      router.push('/stocks')
-      }else{
-      console.log("invalid login")
-    }
     })
 
     
@@ -119,6 +116,36 @@ console.log(currUser,loggedIn)
     setcurrUser(null)
     router.push('/')
   }
+
+
+function PasswordInput() {
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  return (
+    <div className="relative">
+      <input
+        className="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500 pr-10"
+        type={showPassword ? "text" : "password"}
+        id="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
+        <FontAwesomeIcon
+          icon={showPassword ? faEye : faEyeSlash}
+          onClick={toggleShowPassword}
+          className="cursor-pointer text-gray-400 hover:text-gray-500"
+        />
+      </div>
+    </div>
+  );
+}
+
   
   // function checktype(e) {
   //   e.preventDefault();
@@ -127,86 +154,58 @@ console.log(currUser,loggedIn)
   //   .then(data => console.log(data))
   // }
 
-  if (currUser) {
-    return (
-    <>
-    <h2>Welcome, {currUser.username}!</h2>
-    <h2>Loading site</h2>
-      
-    </>
-    );
-  } else {
     
     return (
       <>
-  {/* <Link as={`username/${'test'}`} href="/username/[something]">Link</Link> */}
-  <form onSubmit={handleSubmitlogin}>
-    <div className="form-group">
-      <label htmlFor="username">Username</label>
+  <div className="container mx-auto">
+    <form onSubmit={handleSubmitlogin} className="mb-8">
+      <label className="block font-medium text-gray-700 mb-2" htmlFor="username">Username</label>
       <input
-        className="form-control text-black" 
+        className="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
         type="text"
         id="username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-    </div>
-    <div className="form-group">
-      <label htmlFor="password">Password</label>
+      <label className="block font-medium text-gray-700 mt-4 mb-2" htmlFor="password">Password</label>
       <input
-        className="form-control text-black"
+        className="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
         type="password"
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-    </div>
-    <button className="btn btn-primary" type="submit">Login</button>
-  </form>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" type="submit">Login</button>
+    </form>
 
-  <form onSubmit={handleSubmitnewuser}>
-    <div className="form-group">
-      <label htmlFor="newusername">Username</label>
+    <form onSubmit={handleSubmitnewuser} className="mb-8">
+      <label className="block font-medium text-gray-700 mb-2" htmlFor="newusername">Username</label>
       <input
-        className="form-control text-black"
+        className="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
         type="text"
         id="newusername"
         value={newusername}
         onChange={(e) => setNewUsername(e.target.value)}
       />
-    </div>
-    {/* <div className="form-group">
-      <label htmlFor="name">Name</label>
+      <label className="block font-medium text-gray-700 mt-4 mb-2" htmlFor="email">Email</label>
       <input
-        className="form-control text-black"
-        type="text"
-        id="name"
-        value={username}
-        onChange={(e) => setName(e.target.value)}
-      />
-    </div> */}
-    <div className="form-group">
-      <label htmlFor="email">Email</label>
-      <input
-        className="form-control bg-primary text-black"
+        className="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
         type="email"
         id="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-    </div>
-    <div className="form-group">
-      <label htmlFor="newpassword">Password</label>
+      <label className="block font-medium text-gray-700 mt-4 mb-2" htmlFor="newpassword">Password</label>
       <input
-        className="form-control text-black"
+        className="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
         type="password"
         id="newpassword"
         value={newpassword}
         onChange={(e) => setNewPassword(e.target.value)}
       />
-    </div>
-    <button className="btn btn-primary" type="submit">Create Account</button>
-  </form>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" type="submit">Create Account</button>
+    </form>
+  </div>
 </>
     )
-  }}
+  }
