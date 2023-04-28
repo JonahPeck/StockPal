@@ -49,7 +49,7 @@ console.log(currUser,loggedIn)
       console.log(currUser)
       if(currUser){
       console.log("Pushing")
-      router.push('/home')
+      router.push('/stocks')
       }else{
       console.log("invalid login")
     }
@@ -139,54 +139,74 @@ console.log(currUser,loggedIn)
     
     return (
       <>
-      {/* <Link as = {`username/${'test'}`} href="/username/[something]">Link</Link> */}
-      <form onSubmit={handleSubmitlogin}>
-        <p>Username</p>
-        <input
-        className="input input-bordered w-full max-w-xs"
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <p>password</p>
-        <input
-        className="input input-bordered w-full max-w-xs"
-          type="text"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
-      <form onSubmit={handleSubmitnewuser}>
-        <p>Username</p>
-        <input
-        className="input input-bordered w-full max-w-xs"
-          type="text"
-          value={newusername}
-          onChange={(e) => setNewUsername(e.target.value)}
-        />
-        <p>Name</p>
-        <input
-        className="input input-bordered w-full max-w-xs"
-          type="text"
-          value={username}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <p>email</p>
-        <input
-        className="input input-bordered w-full max-w-xs bg-primary"
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <p>password</p>
-        <input
-        className="input input-bordered w-full max-w-xs"
-          type="text"
-          value={newpassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-        />
-      </form>
-      </>
+  {/* <Link as={`username/${'test'}`} href="/username/[something]">Link</Link> */}
+  <form onSubmit={handleSubmitlogin}>
+    <div className="form-group">
+      <label htmlFor="username">Username</label>
+      <input
+        className="form-control text-black" 
+        type="text"
+        id="username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+    </div>
+    <div className="form-group">
+      <label htmlFor="password">Password</label>
+      <input
+        className="form-control text-black"
+        type="password"
+        id="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+    </div>
+    <button className="btn btn-primary" type="submit">Login</button>
+  </form>
+
+  <form onSubmit={handleSubmitnewuser}>
+    <div className="form-group">
+      <label htmlFor="newusername">Username</label>
+      <input
+        className="form-control text-black"
+        type="text"
+        id="newusername"
+        value={newusername}
+        onChange={(e) => setNewUsername(e.target.value)}
+      />
+    </div>
+    {/* <div className="form-group">
+      <label htmlFor="name">Name</label>
+      <input
+        className="form-control text-black"
+        type="text"
+        id="name"
+        value={username}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div> */}
+    <div className="form-group">
+      <label htmlFor="email">Email</label>
+      <input
+        className="form-control bg-primary text-black"
+        type="email"
+        id="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+    </div>
+    <div className="form-group">
+      <label htmlFor="newpassword">Password</label>
+      <input
+        className="form-control text-black"
+        type="password"
+        id="newpassword"
+        value={newpassword}
+        onChange={(e) => setNewPassword(e.target.value)}
+      />
+    </div>
+    <button className="btn btn-primary" type="submit">Create Account</button>
+  </form>
+</>
     )
   }}
