@@ -52,7 +52,20 @@ class AllStocks(Resource):
         for stock in all_stocks:
             dict_stocks.append(stock.to_dict())
         return make_response(dict_stocks, 200)
-api.add_resource(AllStocks, '/stocks')
+api.add_resource(AllStocks, '/home')
+
+class StocksById(Resource):
+    def get(self, id):
+        try:
+            stock = StockList.query.filter_by(id=id).first()
+            if stock:
+                return make_response(stock.to_dict(), 200)
+        except Exception as e:
+            return make_response({
+                "errors":[e.__str__()]
+            },400)
+
+api.add_resource(StocksById,'/home/<int:id>')
 
 class Login(Resource):
     def post(self):

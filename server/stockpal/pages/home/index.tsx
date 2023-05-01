@@ -11,7 +11,7 @@ import { cursorTo } from "readline";
 const inter = Inter({ subsets: ["latin"] });
 
 export async function getServerSideProps (){
-    const stocksRes = await fetch('http://127.0.0.1:5555/stocks');
+    const stocksRes = await fetch('http://127.0.0.1:5555/home');
     const stocksData = await stocksRes.text()
     const stocks = JSON.parse(stocksData)
 
@@ -48,7 +48,11 @@ export default function App({stocks,currUser}) {
   {stocks.map((stock) => (
     <div key={stock.id} className="bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between">
+        <Link as = {`home/${stock.id}`} href = "/home/[id]">
+            
         <h2 className="font-bold text-black">{stock.symbol}</h2>
+        </Link>
+
         {/* <p className={`text-sm ${stock.change >= 0 ? "text-green-600" : "text-red-600"}`}>
           {stock.change} ({stock.percentChange}%)
         </p> */}
