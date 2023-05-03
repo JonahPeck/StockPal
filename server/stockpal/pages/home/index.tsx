@@ -24,6 +24,7 @@ export async function getServerSideProps (){
 }
 export default function App({stocks,currUser}) {
 
+
     
     if (!currUser) {
         return <div className="text-dblue">Loading.. </div>;
@@ -57,7 +58,6 @@ export default function App({stocks,currUser}) {
       <div className="flex items-center justify-between">
         <Link as = {`home/${stock.id}`} href = "/home/[id]">
             <h2 className="font-bold text-black">{stock.symbol}</h2>
-        
         <p className="text-sm font-medium text-gray-600">{stock.name}</p>
         <p className="text-sm font-medium text-gray-400">{stock.sector}</p>
       </Link>

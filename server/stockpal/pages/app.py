@@ -85,7 +85,7 @@ class AddStockToWatchList(Resource):
 
         return make_response(new_stock.to_dict(),201)
 
-api.add_resource(AddStockToWatchList, '/watchlist')
+api.add_resource(AddStockToWatchList, '/watchlist2')
         
 
 class Login(Resource):
