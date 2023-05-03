@@ -24,20 +24,21 @@ if (!stock) {
 }
 return (
     <>
-    <div className="card w-96 bg-primary text-primary-content">
-  <div className="card-body">
-  
-    <h2 className="card-title">{stock.symbol}</h2>
-    <p>{stock.name}</p>
-    <p>{stock.sector}</p>
-    <div className="card-actions justify-end">
-        <div>
-            <Price symbol={stock.symbol} />
+    <div className="bg-primary text-primary-content p-4 mb-4">
+      <div className="card w-full">
+        <div className="card-body">
+          <h2 className="card-title">{stock.symbol}</h2>
+          <p>{stock.name}</p>
+          <p>{stock.sector}</p>
+          <div className="card-actions justify-end">
+            <div>
+              <Price symbol={stock.symbol} />
+            </div>
+          </div>
         </div>
-      <button className="btn">Add to Portfolio</button>
+      </div>
     </div>
-  </div>
-</div>
-    </>
+  </>
+  
 )
 }

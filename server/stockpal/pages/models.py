@@ -59,7 +59,7 @@ class StockList(db.Model, SerializerMixin):
     symbol = db.Column(db.String)
     sector = db.Column(db.String)
     #chart addition
-    # portfolio = db.relationship("Portfolio", backref = "stocks")
+    portfolio = db.relationship("Portfolio", backref = "stocks")
     serialize_rules = ('-portfolio.stocks', '-created_at', '-updated_at')
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())

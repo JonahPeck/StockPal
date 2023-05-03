@@ -67,6 +67,27 @@ class StocksById(Resource):
 
 api.add_resource(StocksById,'/home/<int:id>')
 
+class AddStockToWatchList(Resource):
+    def get(self):
+        stocks = [stock.to_dict() for stock in Portfolio.query.all()]
+        return make_response(jsonify(stocks), 200)
+
+    def post(self):
+        data = request.get_json()
+
+        new_stock = Portfolio(
+            user_id=data['user_id'],
+            stock_id=data['stock_id'],
+            portfolio_name="test"
+        )
+        db.session.add(new_stock)
+        db.session.commit()
+
+        return make_response(new_stock.to_dict(),201)
+
+api.add_resource(AddStockToWatchList, '/watchlist')
+        
+
 class Login(Resource):
     def post(self):
         try:
