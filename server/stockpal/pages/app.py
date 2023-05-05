@@ -95,9 +95,9 @@ api.add_resource(AddStockToWatchList, '/watchlist2')
 
 class DeleteWatchlistById(Resource):
      def delete(self, id):
-        stock = Portfolio.query.filter_by(id=id).first()
+        stock = Portfolio.query.filter_by(stock_id=id).first()
         if stock:
-            all_portfolio_stocks = Portfolio.query.filter_by(id = id).all()
+            all_portfolio_stocks = Portfolio.query.filter_by(stock_id = id).all()
             db.session.delete(stock)
             for stock in all_portfolio_stocks:
                 db.session.delete(stock)

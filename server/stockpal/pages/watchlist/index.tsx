@@ -22,33 +22,46 @@ export async function getServerSideProps (){
 }
 export default function App({stocks,currUser}) {
   const [stock, setStock] = useState(null);
+  const [watchlist, setWatchlist] = useState([]);
   const router = useRouter();
   const { id } = router.query;
 
   // add to portfolio functionality
 
-  function handleDeleteFromWatchlist(e) {
+  function getWatchlist(){
+    fetch('/watchlist2')
+    .then((r) => r.json())
+    .then((watchlist)=> {
+      setStock(watchlist);
+      console.log(watchlist)
+  });
+}
+useEffect(() => {
+  getWatchlist();
+}, []);
+
+  function handleDeleteFromWatchlist(currId) {
     // e.preventDefault();
+    console.log(currId)
       const data = {
-        "id": id,
+        "id": currId,
         // "user_id": user_id,
 
       };// e.preventDefault();
       console.log("removing from watchlist")
       // console.log(stock)
       console.log(data)
-      fetch('/watchlist2',{
+      fetch(`/watchlist2/${currId}`,{
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       })
-    .then(response => response.json())
-    .then(data => {
-      console.log("Response from server:", data);
-      
-    })
+      .then(()=> {
+        getWatchlist();
+      })
+     
   }
 
 useEffect(()=>{
@@ -65,9 +78,6 @@ return (
     <div className="flex justify-center items-center h-48 overflow-hidden">
   <h1 className="text-4xl font-bold text-gray-800 animate-marquee">Welcome To Your Watchlist</h1>
 </div>
-
-
-
     {stock && (
   <div className="flex flex-wrap justify-center">
     {stock.map((item) => (
@@ -75,7 +85,7 @@ return (
         <div className="card-body flex flex-col items-center">
           {item.stocks ? (
             <div>
-            <button onClick={(e) => console.log(handleDeleteFromWatchlist(item.stocks.id))} className="btn btn-success btn-primary=#7CFC00" style={{ borderColor: '#7CFC00', color: '#7CFC00' }}>Remove From Watchlist</button>
+            <button onClick={(e) => (handleDeleteFromWatchlist(item.stocks.id))} className="btn btn-success btn-primary=#7CFC00" style={{ borderColor: '#7CFC00', color: '#7CFC00' }}>Remove From Watchlist</button>
 
               <h2 className="card-title text-2xl font-bold mb-2">{item.stocks.name}</h2>
               <div className="grid grid-cols-3 gap-4">

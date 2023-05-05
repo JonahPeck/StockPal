@@ -26,16 +26,17 @@ return (
     <>
     <div className="bg-primary text-primary-content p-4 mb-4">
       <div className="card w-full">
-        <div className="card-body">
-          <h2 className="card-title">{stock.symbol}</h2>
-          <p>{stock.name}</p>
-          <p>{stock.sector}</p>
-          <div className="card-actions justify-end">
-            <div>
-              <Price symbol={stock.symbol} stock={stock} />
-            </div>
-          </div>
-        </div>
+      <div className="card-body flex flex-col items-center justify-center">
+  <h2 className="card-title text-3xl font-bold">{stock.symbol}</h2>
+  <p className="text-xl font-bold">{stock.name}</p>
+  <p className="text-xl font-bold">{stock.sector}</p>
+  <div className="card-actions justify-center mt-4">
+    <div>
+      <Price symbol={stock.symbol} stock={stock} />
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
   </>

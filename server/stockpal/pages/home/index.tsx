@@ -24,7 +24,6 @@ export async function getServerSideProps (){
 }
 export default function App({stocks,currUser}) {
 
-
     
     if (!currUser) {
         return <div className="text-dblue">Loading.. </div>;

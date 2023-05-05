@@ -23,32 +23,9 @@ with app.app_context():
     db.session.commit()
     print("data in table")
 
-# import .venv/lib/config
 
-# url = "https://alpha-vantage.p.rapidapi.com/query?interval=1min&function=TIME_SERIES_INTRADAY&symbol=MSFT&datatype=json&output_size=compact"
-
-# # querystring = {"lat":"39.7392","lon":"-104.9903","per_page":"10","radius":"100"}
-
-# headers = {
-#         'content-type': 'application/octet-stream',
-# 		'X-RapidAPI-Key': 'edb1bf48b1mshbd062dbf0793c2dp15ddf4jsndd1028a99649',
-# 		'X-RapidAPI-Host': 'alpha-vantage.p.rapidapi.com'
-# }
-
-# response = requests.request("GET", url, headers=headers, params=querystring)
-
-# data = response.text
-# parse_json = json.loads(data)
-# cleaned_data = json.dumps(parse_json, indent=4)
-
-# print(cleaned_data)
-
-# with open("sample.csv", "w") as outfile:
-#     outfile.write(cleaned_data)
 
 import pandas as pd
-# df = pd.read_json (r'/Users/jonahpeck/Development/code/phase-5/StockPal/server/sample.json')
-# df.to_csv (r'/Users/jonahpeck/Development/code/phase-5/StockPal/server/stocks.csv', index = None)
 
 
 lst = []
