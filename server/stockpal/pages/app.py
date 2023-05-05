@@ -72,13 +72,19 @@ class AddStockToWatchList(Resource):
         stocks = [stock.to_dict() for stock in Portfolio.query.all()]
         return make_response(jsonify(stocks), 200)
 
+    def delete(self, id):
+        session['id'] = None
+        res = make_response(jsonify({ "Deleted" : "Stock off Watchlist"}),200)
+        return res
+
     def post(self):
         data = request.get_json()
-
+        print(data)
         new_stock = Portfolio(
-            user_id=data['user_id'],
+            user_id=session.get('user_id'),
             stock_id=data['stock_id'],
             portfolio_name="test"
+            
         )
         db.session.add(new_stock)
         db.session.commit()
@@ -86,6 +92,21 @@ class AddStockToWatchList(Resource):
         return make_response(new_stock.to_dict(),201)
 
 api.add_resource(AddStockToWatchList, '/watchlist2')
+
+class DeleteWatchlistById(Resource):
+     def delete(self, id):
+        stock = Portfolio.query.filter_by(id=id).first()
+        if stock:
+            all_portfolio_stocks = Portfolio.query.filter_by(id = id).all()
+            db.session.delete(stock)
+            for stock in all_portfolio_stocks:
+                db.session.delete(stock)
+            db.session.commit()
+            return make_response({},200)
+        else:
+            return make_response({"error": "Stock not found"},400)
+
+api.add_resource(DeleteWatchlistById, '/watchlist2/<int:id>')
         
 
 class Login(Resource):

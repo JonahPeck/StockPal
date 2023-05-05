@@ -32,7 +32,7 @@ return (
           <p>{stock.sector}</p>
           <div className="card-actions justify-end">
             <div>
-              <Price symbol={stock.symbol} stock={undefined} />
+              <Price symbol={stock.symbol} stock={stock} />
             </div>
           </div>
         </div>

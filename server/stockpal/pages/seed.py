@@ -11,7 +11,9 @@ faker = Faker()
 
 with app.app_context():
     User.query.delete()
+    Portfolio.query.delete()
     print("Deleting Users")
+    print("Deleting portfolio")
 
     new_user_1 = User(username="Jonah",email="J@gmail.com",password_hash = "test")
     new_user_2 = User(username="Maile",email="M@gmail.com",password_hash = "test")
