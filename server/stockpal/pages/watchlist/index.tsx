@@ -85,21 +85,25 @@ return (
         <div className="card-body flex flex-col items-center">
           {item.stocks ? (
             <div>
-            <button onClick={(e) => (handleDeleteFromWatchlist(item.stocks.id))} className="btn btn-success btn-primary=#7CFC00" style={{ borderColor: '#7CFC00', color: '#7CFC00' }}>Remove From Watchlist</button>
 
-              <h2 className="card-title text-2xl font-bold mb-2">{item.stocks.name}</h2>
+              <h2 className="card-title text-2xl font-bold mb-2 justify-center">{item.stocks.name}</h2>
               <div className="grid grid-cols-3 gap-4">
                  <Link as = {`home/${item.stocks.id}`} href = "/home/[id]">
                 <div>
                   <p className="text-lg font-bold">Symbol:</p>
                   <p>{item.stocks.symbol}</p>
                 </div>
-                </Link>
                 <div>
-                  <p className="text-lg font-bold">Sector:</p>
+                  <p className="text-lg font-bold justify-center">Sector:</p>
                   <p>{item.stocks.sector}</p>
                 </div>
+                </Link>
                 {/* render other properties as needed */}
+              </div>
+              <div>
+                <br></br>
+              <button onClick={(e) => (handleDeleteFromWatchlist(item.stocks.id))} className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Remove From Watchlist</button>
+
               </div>
             </div>
           ) : (
