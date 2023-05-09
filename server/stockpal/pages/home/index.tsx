@@ -22,14 +22,13 @@ export async function getServerSideProps (){
     }
 }
 export default function App({stocks,currUser, symbol}) {
+  
 
   const [data, setData] = useState([])
   const [searchQuery, setSearchQuery] = useState("")
-  const [logo, setLogo] = useState("")
+  const [url, setUrl] = useState('')
 
  
-
-
 
   useEffect(() => {
     fetch("/test.csv")
@@ -41,27 +40,11 @@ export default function App({stocks,currUser, symbol}) {
       });
   }, []);
 
-  useEffect(() => {
-    const options = {
-      headers: {
-        'X-RapidAPI-Key': 'edb1bf48b1mshbd062dbf0793c2dp15ddf4jsndd1028a99649',
-        'X-RapidAPI-Host': 'twelve-data1.p.rapidapi.com'
-      }
-    };
-    fetch(`https://twelve-data1.p.rapidapi.com/logo?symbol=${symbol}`, options)
-      .then(response => response.json())
-      .then(data => {
-        setLogo(data.symbol.url)
-        console.log(data.symbol.url)
-        
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, [symbol]);
-
-  const filteredData = data.filter((item) =>
-    item.includes(searchQuery.toLowerCase())
+console.log(stocks)
+  const filteredData = searchQuery === '' ? stocks: stocks.filter((item) =>
+    item.name.toLowerCase().startsWith(  searchQuery.toLowerCase()) ||
+    item.symbol.toLowerCase().startsWith(  searchQuery.toLowerCase()) ||
+    item.sector.toLowerCase().startsWith(  searchQuery.toLowerCase())
   );
     
     if (!currUser) {
@@ -77,7 +60,7 @@ export default function App({stocks,currUser, symbol}) {
       
 
 
-      console.log(currUser)
+      // console.log(currUser)
     if (!currUser) {
         return (
         <>
@@ -90,19 +73,36 @@ export default function App({stocks,currUser, symbol}) {
         return (
             <>
             <title>StockPal 📈 </title>
-            <input type="text" value={searchQuery} onChange={(e)=> setSearchQuery(e.target.value)}
-            />
+            <input 
+  type="text" 
+  value={searchQuery} 
+  placeholder="Search for a Stock by Name, Symbol, or Sector" 
+  onChange={(e)=> setSearchQuery(e.target.value)}
+  className="w-1/2 px-3 py-2 placeholder-gray-500 text-gray-900 bg-white rounded-md text-m border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
+/>
+<br></br>
+<br></br>
+<br></br>
+
+
             <ul>
-              {filteredData.map((item, index)=> (
-                <li key={index}> {item}</li>
-              ))}
+              {/* {filteredData.map((item, index)=> (
+                <li key={index}> {item.name}</li>
+              ))} */}
             </ul>
+            <img src={url} ></img>
+
 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-  {stocks.map((stock) => (
+  {filteredData.map((stock) => (
     <div key={stock.id} className="bg-white rounded-lg shadow-md p-4" style={{ border: "1.5px solid #7CFC00" }}>
       <div className="flex items-center justify-between">
         <Link as = {`home/${stock.id}`} href = "/home/[id]">
-          <img src={logo} alt={symbol}></img>
+
+
+          {/* having issues getting the url to generate as the stocks map is iterating through the csv file and I am not sure if it will have access to the image url because of that */}
+
+
+          {/* <img src={getThatImage(stock.symbol)} alt={stock.symbol}></img> */}
             <h2 className="font-bold text-black">{stock.symbol}</h2>
         <p className="text-sm font-medium text-gray-600">{stock.name}</p>
         <p className="text-sm font-medium text-gray-400">{stock.sector}</p>

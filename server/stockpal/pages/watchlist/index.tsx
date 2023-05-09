@@ -63,6 +63,7 @@ useEffect(() => {
       })
      
   }
+  
 
 useEffect(()=>{
   fetch(`/watchlist2`)
