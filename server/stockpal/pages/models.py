@@ -58,6 +58,7 @@ class StockList(db.Model, SerializerMixin):
     name = db.Column(db.String, unique = True)
     symbol = db.Column(db.String)
     sector = db.Column(db.String)
+    logo = db.Column(db.String)
     #chart addition
     portfolio = db.relationship("Portfolio", backref = "stocks")
     serialize_rules = ('-portfolio.stocks', '-created_at', '-updated_at')

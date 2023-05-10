@@ -95,19 +95,18 @@ console.log(stocks)
 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
   {filteredData.map((stock) => (
     <div key={stock.id} className="bg-white rounded-lg shadow-md p-4" style={{ border: "1.5px solid #7CFC00" }}>
-      <div className="flex items-center justify-between">
-        <Link as = {`home/${stock.id}`} href = "/home/[id]">
-
-
-          {/* having issues getting the url to generate as the stocks map is iterating through the csv file and I am not sure if it will have access to the image url because of that */}
-
-
-          {/* <img src={getThatImage(stock.symbol)} alt={stock.symbol}></img> */}
-            <h2 className="font-bold text-black">{stock.symbol}</h2>
-        <p className="text-sm font-medium text-gray-600">{stock.name}</p>
+      <div className="flex items-center justify-between bg-white rounded-lg shadow-md p-4">
+  <Link as={`home/${stock.id}`} href="/home/[id]">
+    <div className="flex items-center">
+      <img src={stock.logo} alt={stock.symbol} className="w-24 h-20 mr-4" />
+      <div>
+        <h1 className="text-lg font-bold text-gray-600">{stock.name}</h1>
+        <h2 className="text-lg font-bold text-gray-900">{stock.symbol}</h2>
         <p className="text-sm font-medium text-gray-400">{stock.sector}</p>
-      </Link>
       </div>
+    </div>
+  </Link>
+</div>
 
     </div>
   ))}

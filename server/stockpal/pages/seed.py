@@ -68,6 +68,7 @@ with app.app_context():
             symbol = lst[i]['Symbol'],
             name = lst[i]['Name'],
             sector = lst[i]['Sector'],
+            logo = lst[i]['Logo']
         )
         stocks.append(new_stock)
     pprint.pprint("hi")

@@ -82,36 +82,34 @@ return (
     {stock && (
   <div className="flex flex-wrap justify-center">
     {stock.map((item) => (
-      <div key={item.id} className="card w-96 bg-white shadow-md rounded-lg p-4 mb-4">
-        <div className="card-body flex flex-col items-center">
-          {item.stocks ? (
-            <div>
-
-              <h2 className="card-title text-2xl font-bold mb-2 justify-center">{item.stocks.name}</h2>
-              <div className="grid grid-cols-3 gap-4">
-                 <Link as = {`home/${item.stocks.id}`} href = "/home/[id]">
+      <div key={item.id} className="bg-white shadow-md rounded-lg p-4 mb-4 w-full max-w-sm">
+      <div className="flex flex-col items-center">
+        {item.stocks ? (
+          <div>
+            <Link as={`home/${item.stocks.id}`} href="/home/[id]">
+              <div className="flex items-center justify-left mb-2">
+                <img src={item.stocks.logo} alt={item.stocks.symbol} className="w-18 h-14 mr-2" />
                 <div>
-                  <p className="text-lg font-bold">Symbol:</p>
-                  <p>{item.stocks.symbol}</p>
+                  <h2 className="text-lg font-bold">{item.stocks.name}</h2>
+                  <p className="text-lg font-medium text-gray-500">{item.stocks.symbol}</p>
+                  <p className="text-lg font-medium justify-center">{item.stocks.sector}</p>
                 </div>
-                <div>
-                  <p className="text-lg font-bold justify-center">Sector:</p>
-                  <p>{item.stocks.sector}</p>
-                </div>
-                </Link>
-                {/* render other properties as needed */}
               </div>
+            </Link>
+            <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <br></br>
-              <button onClick={(e) => (handleDeleteFromWatchlist(item.stocks.id))} className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Remove From Watchlist</button>
-
+                <p className="text-lg font-medium text-gray-500"></p>
               </div>
+              {/* render other properties as needed */}
             </div>
-          ) : (
-            <p>No associated stock</p>
-          )}
-        </div>
+            <button onClick={(e) => (handleDeleteFromWatchlist(item.stocks.id))} className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-full">Remove from Watchlist</button>
+          </div>
+        ) : (
+          <p>No associated stock</p>
+        )}
       </div>
+    </div>
+    
     ))}
   </div>
 )}
