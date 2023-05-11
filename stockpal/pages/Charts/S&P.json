@@ -1,0 +1,468 @@
+{ 
+  "S&P": "five_year_historical",
+  "financialreport": [
+    {
+      "company": "S&P500",
+      "companyname": "ChartJS Corp",
+      "companystock": "CHRT",
+      "financials":
+      [
+        {
+        "month": "May 2023",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "April 2023",
+        "open": 4102.20,
+        "high":4170.6,
+        "low": 4049.35,
+        "close": 4169.48
+       },
+       {
+        "month": "March 2023",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "February 2023",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "January 2023",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "December 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "November 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "October 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "September 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "August 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "July 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "June 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "May 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "April 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "March 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "February 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "January 2022",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "December 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "November 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "October 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "September 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "August 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "July 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "June 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "May 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "April 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "March 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "February 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "January 2021",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "December 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "November 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "October 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "September 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "August 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "July 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "June 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "May 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "April 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "March 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "February 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "January 2020",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "December 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "November 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "October 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "September 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "August 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "July 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "June 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "May 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "April 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "March 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "February 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "January 2019",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "December 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "November 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "October 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "September 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "August 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "July 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "June 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "May 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "April 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "March 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "February 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       },
+       {
+        "month": "January 2018",
+        "open": 4166.79,
+        "high":4186.92,
+        "low": 4048.28,
+        "close":4136.25
+       }
+      ]
+    }
+  ]
+}
